@@ -13,6 +13,7 @@ var max = 0;
 const snake = {
     x: 160,
     y: 160,
+    
 
     dx: grid,
     dy: 0,
@@ -62,11 +63,11 @@ function loop() {
     }
 
     // ovqat rangi
-    context.fillStyle = '#fff';
+    context.fillStyle = 'gold';
     context.fillRect(food.x, food.y, grid - 1, grid - 1);
 
     // snake style
-    context.fillStyle = '#E43F5A';
+    context.fillStyle = 'purple';
 
     snake.cells.forEach(function (cell, index) {
         context.fillRect(cell.x, cell.y, grid - 1, grid - 1);
@@ -79,6 +80,8 @@ function loop() {
             // ovqat
             food.x = getRandomInt(0, 25) * grid;
             food.y = getRandomInt(0, 25) * grid;
+            
+            
         }
         for(var i = index + 1; i < snake.cells.length; i++){
             if(cell.x === snake.cells[i].x && cell.y === snake.cells[i].y){
